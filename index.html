@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Mongabay News Homepage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.8.1/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="build/js/jquery.fittext.js"></script>
+    <script src="build/js/util.js"></script>
+    <script src="build/js/dropdown.js"></script>
+    <link rel="stylesheet" href="build/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+  <header>
+      <div class="top-nav">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="language-picker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            English
+          </button>
+          <div class="dropdown-menu" aria-labelledby="language-picker">
+            <button class="dropdown-item" type="button">Deutsch</button>
+            <button class="dropdown-item" type="button">Español</button>
+            <button class="dropdown-item" type="button">Français</button>
+          </div>
+        </div>
+      </div>
+      <div class="site-identity">
+        <div class="logo">
+          <img src="build/img/mongabay_logo_full.png" />
+        </div>
+      </div>
+      <div class="main-menu">
+        <nav class="navbar navbar-toggleable-md navbar-light">
+          <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Rainforests</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Oceans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Animals&Environment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">For kids</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Photo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wildtech</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">More</a>
+              </li>
+            </ul>
+            <div class="top-search">
+              <img src="build/img/icons/search.png"/>
+            </div>
+          </div>
+        </nav>
+      </div>
+  </header>
+  <main>
+      <div class="row featured-slider no-gutters">
+        <div class="col-lg-8" style="background: url(build/img/cheetah.jpg);background-size: cover">
+          <div class="slider-headline responsive-title">Cheetahs return to Malawi after decades</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col hidden-md-down">
+          <div class="col-lg-12 half-height" style="background: url(build/img/fishing.jpg);background-size: cover; border-left: 5px solid white; border-bottom: 5px solid white;">
+            <div class="slider-headline small responsive-title">Amid life and death risks, Brazil’s land defenders stand firm</div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-6 half-height" style="background: url(build/img/shark.jpg);background-size: cover; border-left: 5px solid white; position: absolute; left: 0; top: 50%">
+            <div class="slider-headline small responsive-title">Singapore is world’s second largest shark-fin trader: TRAFFIC</div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-6 half-height small" style="background: url(build/img/snake.jpg);background-size: cover; border-left: 5px solid white; position: absolute; right: 0; top: 50%">
+            <div class="slider-headline small responsive-title">Rugged innovation: Meeting the challenges of bringing high tech DNA analysis to the field</div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="row">
+      	<div id="main" class="col-lg-8">
+          <div class="tag-line">
+            <h1>Environmental headlines</h1>
+            <p>Mongabay is a non-profit provider of conservation and environmental science news. We aim to inspire, educate, and inform.</p>
+          </div>
+      		<div id="app"></div>
+      		<div id="pager"></div>
+        </div>
+        <aside class="col-lg-4">
+          <div class="widget most-read">
+            <h2>Most read</h2>
+            <ul>
+              <li>Peru lost more than 1 million hectares of Amazon forest over a period of 15 years</li>
+              <li>From loathed to loved: Villagers rally to save Greater Adjutant stork</li>
+              <li>With poaching curtailed, a new menace to Nepal’s wildlife</li>
+              <li>Ten good news stories for Endangered Species Day</li>
+              <li>A new secret runway found in Laguna del Tigre National Park in Guatemala</li>
+              <li>Thylacine survey: Are we going to rediscover the 'moonlight tiger'?</li>
+              <li>As Arctic sea ice shows record decline, scientists prepare to go blind</li>
+            </ul>
+          </div>
+          <div class="widget location">
+            <h2>Most read</h2>
+            <ul>
+              <li>Peru lost more than 1 million hectares of Amazon forest over a period of 15 years</li>
+              <li>From loathed to loved: Villagers rally to save Greater Adjutant stork</li>
+              <li>With poaching curtailed, a new menace to Nepal’s wildlife</li>
+              <li>Ten good news stories for Endangered Species Day</li>
+              <li>A new secret runway found in Laguna del Tigre National Park in Guatemala</li>
+              <li>Thylacine survey: Are we going to rediscover the 'moonlight tiger'?</li>
+              <li>As Arctic sea ice shows record decline, scientists prepare to go blind</li>
+            </ul>
+          </div>
+          <div class="widget topics">
+            <h2>Most read</h2>
+            <ul>
+              <li>Peru lost more than 1 million hectares of Amazon forest over a period of 15 years</li>
+              <li>From loathed to loved: Villagers rally to save Greater Adjutant stork</li>
+              <li>With poaching curtailed, a new menace to Nepal’s wildlife</li>
+              <li>Ten good news stories for Endangered Species Day</li>
+              <li>A new secret runway found in Laguna del Tigre National Park in Guatemala</li>
+              <li>Thylacine survey: Are we going to rediscover the 'moonlight tiger'?</li>
+              <li>As Arctic sea ice shows record decline, scientists prepare to go blind</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div id="special-series">
+        <h2>Special series</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <h4>Endangered environmentalists</h4>
+            <ul>
+              <li>Amid life and death risks, Brazil’s land defenders stand firm</li>
+              <li>DRC’s Garamba National Park: The last giraffes of the Congo</li>
+              <li>Anti-trafficking activist held without trial in Madagascar</li>
+            </ul>
+
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Global forest reporting network</h4>
+            <ul>
+              <li>Communities band together to protect El Salvador’s last mangroves</li>
+              <li>Rebel road expansion brings deforestation to remote Colombian Amazon</li>
+              <li>Indigenous groups, activists risk arrest to blockade logging in Malaysia</li>
+            </ul>
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Endangered environmentalists</h4>
+            <ul>
+              <li>Amid life and death risks, Brazil’s land defenders stand firm</li>
+              <li>DRC’s Garamba National Park: The last giraffes of the Congo</li>
+              <li>Anti-trafficking activist held without trial in Madagascar</li>
+            </ul>
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h4>Endangered environmentalists</h4>
+            <ul>
+              <li>Amid life and death risks, Brazil’s land defenders stand firm</li>
+              <li>DRC’s Garamba National Park: The last giraffes of the Congo</li>
+              <li>Anti-trafficking activist held without trial in Madagascar</li>
+            </ul>
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Global forest reporting network</h4>
+            <ul>
+              <li>Communities band together to protect El Salvador’s last mangroves</li>
+              <li>Rebel road expansion brings deforestation to remote Colombian Amazon</li>
+              <li>Indigenous groups, activists risk arrest to blockade logging in Malaysia</li>
+            </ul>
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Endangered environmentalists</h4>
+            <ul>
+              <li>Amid life and death risks, Brazil’s land defenders stand firm</li>
+              <li>DRC’s Garamba National Park: The last giraffes of the Congo</li>
+              <li>Anti-trafficking activist held without trial in Madagascar</li>
+            </ul>
+            <div class="thumbnail-s">
+              <img src="build/img/giraffes.jpg"/>
+            </div>
+            <div class="more-special">
+              <a href="">More articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <main>
+  <footer>
+    <div class="container">
+
+    </div>
+  </footer>
+  <script>
+    //jQuery(".responsive-title").fitText();
+    jQuery(".responsive-title").fitText(1.2, { minFontSize: '16px', maxFontSize: '32px' });
+  </script>
+  <script src="build/bundle.js"></script>
+</body>
+</html>
